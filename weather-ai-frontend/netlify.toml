@@ -1,3 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+  # Base directory sudah diatur di Netlify UI, jadi tidak perlu di sini.
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
