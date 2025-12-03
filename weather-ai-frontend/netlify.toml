@@ -1,9 +1,4 @@
-[build]
-  command = "npm run build"
-  publish = ".next"
-  # Base directory sudah diatur di Netlify UI, jadi tidak perlu di sini.
-
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/404.html" # Arahkan ke 404.html (yang sudah di-generate Next.js)
   status = 200
