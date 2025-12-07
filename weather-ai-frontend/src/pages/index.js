@@ -226,7 +226,6 @@ export default function Home() {
     switch(activeTab) {
       case 'weather':
         return (
-          // Disesuaikan: max-w-6xl
           <div className="max-w-6xl mx-auto"> 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
@@ -255,7 +254,6 @@ export default function Home() {
       
       case 'mining':
         return (
-          // Disesuaikan: max-w-6xl
           <div className="max-w-6xl mx-auto">
             <MiningDashboard weatherData={weatherData} />
           </div>
@@ -263,7 +261,6 @@ export default function Home() {
       
       case 'forecast':
         return (
-          // Disesuaikan: max-w-6xl
           <div className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-3xl border border-white/20 p-6">
               <h2 className="text-2xl font-bold text-white mb-6">5-Hour Forecast</h2>
@@ -315,7 +312,6 @@ export default function Home() {
             <SearchBar onSearch={handleSearch} />
             
             {/* Quick Location Buttons */}
-            {/* Disesuaikan: max-w-4xl */}
             <div className="flex flex-wrap justify-center gap-3 mt-4 max-w-4xl mx-auto">
               {['Jakarta', 'Bandung', 'Surabaya', 'Bali'].map((city) => (
                 <button
@@ -338,7 +334,6 @@ export default function Home() {
 
           {/* Error Message */}
           {error && (
-            // Disesuaikan: max-w-6xl
             <div className="max-w-6xl mx-auto mb-6 bg-red-500/20 border border-red-500/50 text-red-200 px-6 py-4 rounded-2xl backdrop-blur-sm">
               <div className="flex items-center space-x-3">
                 <AlertTriangle className="w-6 h-6" />
@@ -357,7 +352,6 @@ export default function Home() {
             <>
               {/* Weather Alerts */}
               {(weatherData.rainfall > 10 || weatherData.wind_speed > 35) && (
-                // Disesuaikan: max-w-6xl
                 <div className="max-w-6xl mx-auto mb-6 bg-gradient-to-r from-orange-900/30 to-red-900/30 border border-orange-500/50 rounded-2xl p-6 backdrop-blur-sm">
                   <div className="flex items-center space-x-3">
                     <AlertTriangle className="w-6 h-6 text-orange-400" />
@@ -396,15 +390,11 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Main Content (Menggunakan max-w-6xl di renderTabContent) */}
+              {/* Main Content */}
               {renderTabContent()}
 
-              {/* Quick Stats (LAYOUT 4 KARTU PER BARIS) */}
-              
-              {/* BARIS PERTAMA (4 Kartu: Temp, Humidity, Rainfall, Wind Speed) */}
-              {/* Disesuaikan: max-w-6xl */}
+              {/* Quick Stats */}
               <div className="max-w-6xl mx-auto mt-8 grid grid-cols-2 md:grid-cols-4 gap-4"> 
-                {/* Kartu 1: Temp */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Thermometer className="w-5 h-5 text-red-400" />
@@ -414,7 +404,6 @@ export default function Home() {
                   <div className="text-xs text-gray-400">Feels like {weatherData.temperature - 2}°C</div>
                 </div>
                 
-                {/* Kartu 2: Humidity */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Droplets className="w-5 h-5 text-blue-400" />
@@ -426,7 +415,6 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Kartu 3: Rainfall */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Cloud className="w-5 h-5 text-purple-400" />
@@ -436,7 +424,6 @@ export default function Home() {
                   <div className="text-xs text-gray-400">Last 3 hours</div>
                 </div>
                 
-                {/* Kartu 4: Wind Speed */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Wind className="w-5 h-5 text-green-400" />
@@ -449,10 +436,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* BARIS KEDUA (4 Kartu: Visibility, Cloud Cover, Dew Point, Pressure) */}
-              {/* Disesuaikan: max-w-6xl */}
               <div className="max-w-6xl mx-auto mt-4 grid grid-cols-2 md:grid-cols-4 gap-4"> 
-                {/* Kartu 5: Visibility */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Eye className="w-5 h-5 text-yellow-400" />
@@ -464,7 +448,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Kartu 6: Cloud Cover */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Sun className="w-5 h-5 text-orange-400" />
@@ -476,7 +459,6 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Kartu 7: Dew Point */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Snowflake className="w-5 h-5 text-cyan-400" />
@@ -488,7 +470,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Kartu 8: Pressure */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Minimize2 className="w-5 h-5 text-indigo-400" /> 
@@ -499,7 +480,6 @@ export default function Home() {
                     {weatherData.pressure > 1020 ? 'High' : weatherData.pressure < 1000 ? 'Low' : 'Normal'}
                   </div>
                 </div>
-                
               </div>
             </>
           ) : null}
@@ -514,17 +494,24 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* Chatbot Button */}
+      {/* Chatbot Component */}
+      <Chatbot 
+        isOpen={showChatbot}
+        onClose={() => setShowChatbot(false)}
+        weatherData={weatherData}
+      />
+
+      {/* Chatbot Button - HANYA UBAH INI */}
       <button
         onClick={() => setShowChatbot(true)}
-        className="fixed bottom-6 right-6 z-40 group"
+        className="fixed bottom-6 right-6 z-50 group"
       >
         <div className="relative">
           {/* Pulsing Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-ping opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full animate-ping opacity-20"></div>
           
           {/* Main Button */}
-          <div className="relative bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110">
+          <div className="relative bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
             </svg>
@@ -538,13 +525,6 @@ export default function Home() {
           )}
         </div>
       </button>
-
-      {/* Chatbot Component */}
-      <Chatbot 
-        isOpen={showChatbot}
-        onClose={() => setShowChatbot(false)}
-        weatherData={weatherData}
-      />
 
       <style jsx global>{`
         @keyframes blob {
