@@ -1,12 +1,13 @@
 const CHATBOT_API_URL = process.env.NODE_ENV === 'development' 
   ? 'http://localhost:3000/api/chatbot'
-  : 'https://chatbot-rain-production.up.railway.app';
+  : '/api/chatbot'; // 💡 Ganti URL Railway dengan path proxy Vercel
 
 export const sendToChatbot = async (message) => {
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
+    // Endpoint yang dipanggil menjadi /api/chatbot/chat
     const response = await fetch(`${CHATBOT_API_URL}/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
